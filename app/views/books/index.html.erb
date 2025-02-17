@@ -1,10 +1,23 @@
 <h1>Books</h1>
 
+<!-- ここから一覧 -->
+
+<%= @
+
 
  
 
 <!-- ここから下は新規投稿 -->
 <h2>New Book</h2>
+
+<% if @book.errors.any? %>
+  <%= @book.errors.count %>errors prevented this post from being saved.
+  <ul>
+    <% @book.errors.full_massages.each do |message| %>
+      <li><%= message %></li>
+    <% end %>
+  </ul>
+<% end %>
 
 <div class="new-book">
 <%= form_with model:@book do |f| %>

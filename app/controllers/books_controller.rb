@@ -1,5 +1,6 @@
 class BooksController < ApplicationController
   def index
+    @books = Book.all
   end
 
   def new
@@ -7,15 +8,19 @@ class BooksController < ApplicationController
   end
 
   def create
-    book = Book.new(book_params)
-    book.save
-    redirect_to 'index_book_path'
+    @book = Book.new(book_params)
+    if @book.save
+      redirect_to '/books'
+      # redirect_toで戻れないエラーが出ている！
+    else
+      render :books
+    end
   end
 
   def show
   end
 
-  def edit
+  def editquit
   end
 
 
