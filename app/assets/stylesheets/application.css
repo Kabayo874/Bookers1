@@ -21,3 +21,14 @@ body {
  p {
   margin: 33px;
  }
+
+.new-book {
+  display: block;
+}
+
+ .field {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  margin-bottom: 10px;
+ }
