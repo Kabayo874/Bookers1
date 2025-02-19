@@ -4,11 +4,11 @@ class BooksController < ApplicationController
   end
 
   def new
-    @book = Book.new
+    @n_book = Book.new
   end
 
   def create
-    @book = Book.new(book_params)
+    @c_book = Book.new(book_params)
     if @book.save
       redirect_to '/books'
       # redirect_toで戻れないエラーが出ている！
@@ -20,7 +20,7 @@ class BooksController < ApplicationController
   def show
   end
 
-  def editquit
+  def edit
   end
 
 
